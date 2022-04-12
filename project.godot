@@ -14,8 +14,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Project 5"
-run/main_scene="res://Maze/Maze.tscn"
+config/name="05-FPS-Maze"
+run/main_scene="res://UI/Main Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
