@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/gold.material" type="Material" id=1]
 [ext_resource path="res://Assets/Jewel Texture.webp" type="Texture" id=2]
 [ext_resource path="res://Assets/Jewel 2.webp" type="Texture" id=3]
 [ext_resource path="res://Jewel/jewel.gd" type="Script" id=4]
+[ext_resource path="res://win sound 1-2.wav" type="AudioStream" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "jewel_Mesh jewel"
@@ -66,5 +67,8 @@ material/0 = SubResource( 2 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123187, 0.196442, 0.0119977 )
 shape = SubResource( 3 )
+
+[node name="Jewel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_jewel_body_entered"]
