@@ -80,6 +80,9 @@ margin_right = 490.0
 margin_bottom = 370.0
 custom_fonts/font = SubResource( 4 )
 text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 400.0
