@@ -39,6 +39,7 @@ var height = 12  						# height of map (in tiles)
 
 func _ready():
 	randomize()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	make_maze()
 	
 func check_neighbors(cell, unvisited):
