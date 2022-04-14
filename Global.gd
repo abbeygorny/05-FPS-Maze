@@ -1,6 +1,6 @@
 extends Node
 
-
+var score = 0
 
 
 func _ready():
@@ -12,8 +12,10 @@ func _unhandled_input(event):
 		var menu = get_node_or_null("/root/Game/Menu")
 		if menu != null:
 			if not menu.visible:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				menu.show()
 				get_tree().paused = true 	# pause the game while the menu is visible
 			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 				menu.hide()
 				get_tree().paused = false

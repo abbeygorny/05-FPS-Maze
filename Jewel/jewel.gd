@@ -1,22 +1,23 @@
 extends Area
 
+signal score_changed
 
-var score = 0
 func change_score(s):
-	score += s
+	Global.score += s
 	emit_signal("score_changed")
 
+var _score_changed = connect("score_changed",self,"_on_score_changed")	
 
-var _score_changed = Global.connect("score_changed",self,"_on_score_changed")	
 func _on_score_changed():
-	$Score.text = "Score: " + str(Global.score)
-	
+	var Score = get_node_or_null("/root/Game/Score")
+	if Score != null:
+		Score.text = "Score: " + str(Global.score)	
 
 
-var sound = get_node_or_null("Jewel")
 func _on_jewel_body_entered(body):
+	var sound = get_node_or_null("/root/Game/Jewel")
 	if body.name == "Player":
-		score += 100
+		change_score(100)
 	if sound != null:
 		sound.playing = true
 	var exit = get_node_or_null("/root/Game/Maze/Exit")
